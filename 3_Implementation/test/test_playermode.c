@@ -24,8 +24,7 @@ int test_chooseplayermode(t_struct *s, int key);
 /* Write all the test functions */ 
 int test_chooseplayermode(t_struct *s, int key) {
   
-  //TEST_ASSERT_EQUAL_STRING("Washing machine is ON.",start->s);
-  TEST_ASSERT_EQUAL(0, chose_game_mode(0, KEY_UP));
+  TEST_ASSERT_EQUAL(0, player_mode_opt(0, KEY_UP));
 }
 
 /* Start of the application test */
