@@ -21,7 +21,7 @@ int test_start_curse();
 
 
 /* Write all the test functions */ 
-int start_curse() {
+int test_start_curse() {
   
   TEST_ASSERT_EQUAL_INT(0, start_curse());
 }
