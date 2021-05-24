@@ -9,6 +9,7 @@
  * 
  */
 #include "matrix.h"
+#include "unity_internals.h"
 #include "unity.h"
 
 /* Required by the unity test framework */
@@ -17,7 +18,7 @@ void setUp(){}
 void tearDown(){}
 
 /* Write all the test functions */ 
-void test_start_curse() {
+int test_start_curse() {
   
   TEST_ASSERT_EQUAL(0, test_start_curse());
 }
