@@ -1,7 +1,8 @@
+
 /**
- * @file test_up_down.c
+ * @file main.c
  * @author Praveen Kumar G - 99004437(praveen.kumar5@ltts.com)
- * @brief Unit Testing for Matrix Line input option
+ * @brief function definition for opening page of game and background
  * @version 0.1
  * @date 2021-05-23
  * 
@@ -9,35 +10,54 @@
  * 
  */
 
-#include "unity_internals.h"
-#include "unity.h"
+
+
 #include "matrix.h"
 
-/* Required by the unity test framework */
-void setUp(){}
-
-/* Required by the unity test framework */
-void tearDown(){}
-
-
-int test_matrix_line_opt(t_struct *s, int key, int *i)
+int	start_curse()
 {
-    TEST_ASSERT_EQUAL(Warning: Out of range., test_matrix_line_opt( 0 ,0, 0));
-    //TEST_ASSERT_EQUAL(3, pack_nb( 0 ,3, 1));
-    //TEST_ASSERT_EQUAL(12,pack_nb( 1 ,2, 2));
-    //TEST_ASSERT_EQUAL(" ",pack_nb( 1 ,0x107 ,1));
-    //TEST_ASSERT_EQUAL(" ",pack_nb( 10 ,0x107 ,2));
+  if (initscr() == NULL)
+    return (str_put("Couldn't initscr.\n", 2));
+  start_color();
+  init_pair(1, COLOR_WHITE, COLOR_BLUE);
+  init_pair(2, COLOR_YELLOW, COLOR_BLUE);
+  init_pair(3, COLOR_YELLOW, COLOR_BLACK);
+  curs_set(0);
+  if (noecho() == ERR)
+    return (str_put("Couldn't noecho.\n", 2));
+  if (keypad(stdscr, TRUE) == ERR)
+    return (str_put("Couldn't keypad.\n", 2));
+  return (0);
 }
-int main()
+/**
+ * @brief quits the game
+ * 
+ */
+void	quit(t_struct *s)
 {
-/* Initiate the Unity Test Framework */
-  UNITY_BEGIN();
+  if (s != NULL)
+    free(s);
+  endwin();
+  exit(0);
+}
 
-/* Run Test functions */
-  //RUN_TEST(test_mainmenu);
-  RUN_TEST(test_matrix_line_opt);
-  
+int		main()
+{
+  t_struct	*s;
+  WINDOW	*frame;
 
-  /* Close the Unity Test Framework */
-  return UNITY_END();
+  if (start_curse() == -1 || (s = malloc(sizeof(*s))) == NULL)
+    quit(s);
+  if ((frame = newwin(25, 51, 1, 3)) == NULL)
+    return (str_put("Couldn't create frame window.\n", 2));
+  if ((s->game = newwin(23, 49, 2, 4)) == NULL)
+    return (str_put("Couldn't create game window.\n", 2));
+  wbkgd(frame, COLOR_PAIR(3));
+  wbkgd(s->game, COLOR_PAIR(1));
+  wborder(frame, '+', '+', '+', '+', '+', '+', '+', '+');
+  wrefresh(stdscr);
+  wrefresh(frame);
+  player_mode_opt(s, 0);
+  quit(s);
+  return (0);
 }
