@@ -22,14 +22,11 @@ void tearDown(){}
 
 int test_matrix_line_opt(t_struct *s, int key, int *i)
 {
-    //TEST_ASSERT_EQUAL(2, pack_nb( 0 ,2, 1));
+    TEST_ASSERT_EQUAL(Warning: Out of range., test_matrix_line_opt( 0 ,0, 0));
     //TEST_ASSERT_EQUAL(3, pack_nb( 0 ,3, 1));
     //TEST_ASSERT_EQUAL(12,pack_nb( 1 ,2, 2));
     //TEST_ASSERT_EQUAL(" ",pack_nb( 1 ,0x107 ,1));
     //TEST_ASSERT_EQUAL(" ",pack_nb( 10 ,0x107 ,2));
-    
-    
-    TEST_ASSERT_EQUAL(0,0);
 }
 int main()
 {
