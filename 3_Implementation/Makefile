@@ -89,16 +89,16 @@ fclean: clean
 re: fclean all
 
 coverage:
-	cp -r test/test_end.c
-	gcc -fprofile-arcs -ftest-coverage -I $(INC_H) -I $(INC_T) unity/unity.c test/test_end.c  $(SRC) -o $(call FixPath, $(TEST_PROJ_NAME).$(EXEC))
-	$(call FixPath, ./$(TEST_PROJ_NAME).$(EXEC))
+	cp  src/case_matrixgame.c
+	gcc -fprofile-arcs -ftest-coverage -I $(INC_H) -I $(INC_T) src/case_matrixgame.c  $(SRC) -o $(call FixPath, $(PROJ_NAME).$(EXEC))
+	$(call FixPath, ./$(PROJ_NAME).$(EXEC))
 	gcov -a $(COV_SRC)
 	$(RM) *.$(EXEC)
 	$(RM) *.gcda
 	$(RM) *.gcno
 	$(RM) *.c.gcov
 	$(RM) *.DAT
-	$(RM) test/test_end.c
+	$(RM) src/case_matrixgame.c
 
 
 cppcheck:
