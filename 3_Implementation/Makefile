@@ -89,8 +89,8 @@ fclean: clean
 re: fclean all
 
 coverage:
-	cp  src/case_matrixgame.c
-	gcc -fprofile-arcs -ftest-coverage -I $(INC_H) -I $(INC_T) src/case_matrixgame.c  $(SRC) -o $(call FixPath, $(PROJ_NAME).$(EXEC))
+	cp -r src
+	gcc -fprofile-arcs -ftest-coverage -I $(INC_H) -I $(INC_T) src $(SRC) -o $(call FixPath, $(PROJ_NAME).$(EXEC))
 	$(call FixPath, ./$(PROJ_NAME).$(EXEC))
 	gcov -a $(COV_SRC)
 	$(RM) *.$(EXEC)
@@ -98,7 +98,7 @@ coverage:
 	$(RM) *.gcno
 	$(RM) *.c.gcov
 	$(RM) *.DAT
-	$(RM) src/case_matrixgame.c
+	$(RM) src
 
 
 cppcheck:
