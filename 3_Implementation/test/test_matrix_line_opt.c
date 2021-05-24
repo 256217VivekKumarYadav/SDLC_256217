@@ -31,7 +31,7 @@ int main()
 
 /* Run Test functions */
   //RUN_TEST(test_mainmenu);
-  RUN_TEST_AT_LINE(test_start_curse);
+  RUN_TEST(test_start_curse);
   //RUN_TEST(test_Washclothes);
   //RUN_TEST(test_WashMenu);
   //RUN_TEST(test_Soak);
