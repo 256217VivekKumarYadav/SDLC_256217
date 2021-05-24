@@ -16,14 +16,10 @@ void setUp(){}
 /* Required by the unity test framework */
 void tearDown(){}
 
-/* Prototypes for all the test functions */
-int test_start_curse();
-
-
 /* Write all the test functions */ 
-int test_start_curse() {
+int test_start_curse(void) {
   
-  TEST_ASSERT_EQUAL_INT(0, test_start_curse());
+  TEST_ASSERT_EQUAL(0, test_start_curse());
 }
 
 /* Start of the application test */
