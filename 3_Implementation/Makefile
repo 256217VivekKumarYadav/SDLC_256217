@@ -34,17 +34,9 @@ CC = gcc
 
 OBJS=	$(SRC:.c=.o)
 
-COV_SRC =test/test_playermode.c \
-test/test_gamelevel.c \
-test/test_gamesize.c \
-test/test_my.c \
-test/test_matrix_line_opt.c \
+COV_SRC =test_matrix_line_opt.c
 
-TEST_SRC = test/test_playermode.c \
-test/test_gamelevel.c \
-test/test_gamesize.c \
-test/test_my.c \
-test/test_matrix_line_opt.c \
+TEST_SRC =test_matrix_line_opt.c/
 unity/unity.c 
 INC_H = inc
 INC_T = unity
@@ -90,7 +82,7 @@ re: fclean all
 
 coverage:
 	cp test/test/test_matrix_line_opt.c 
-	gcc -fprofile-arcs -ftest-coverage -I $(INC_H) -I $(INC_T) unity/unity.c test/test_playermode.c $(SRC) -o $(call FixPath, $(TEST_PROJ_NAME).$(EXEC))
+	gcc -fprofile-arcs -ftest-coverage -I $(INC_H) -I $(INC_T) unity/unity.c test/test_matrix_line_opt.c $(SRC) -o $(call FixPath, $(TEST_PROJ_NAME).$(EXEC))
 	$(call FixPath, ./$(TEST_PROJ_NAME).$(EXEC))
 	gcov -a $(COV_SRC)
 	$(RM) *.$(EXEC)
