@@ -35,20 +35,16 @@ CC = gcc
 OBJS=	$(SRC:.c=.o)
 
 COV_SRC =test/test_playermode.c \
-test/test_end.c \
 test/test_matrix_line_opt.c \
 test/test_gamelevel.c \
 test/test_gamesize.c \
-test/test_my.c \
-test/test_gamestructure.c
+test/test_my.c
 
 TEST_SRC = test/test_playermode.c \
-test/test_end.c \
 test/test_matrix_line_opt.c \
 test/test_gamelevel.c \
 test/test_gamesize.c \
 test/test_my.c \
-test/test_gamestructure.c \
 unity/unity.c 
 INC_H = inc
 INC_T = unity
