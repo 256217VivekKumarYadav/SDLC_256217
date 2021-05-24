@@ -8,29 +8,12 @@
 #define UNITY_INTERNALS_H
 
 #ifdef UNITY_INCLUDE_CONFIG_H
-#include "matrix.h"
+#include "unity_config.h"
 #endif
 
 #ifndef UNITY_EXCLUDE_SETJMP_H
 #include <setjmp.h>
 #endif
-
-#ifndef UNITY_EXCLUDE_STDLIB_H
-#include <stdlib.h>
-#endif
-#ifndef UNITY_EXCLUDE_UNISTD_H
-#include<unistd.h>
-#endif
-
-
-#ifndef UNITY_EXCLUDE_CURSES_H
-#include <curses.h>
-#endif
-
-#ifndef UNITY_EXCLUDE_NCURSES_H
-#include <ncurses.h>
-#endif
-
 
 #ifndef UNITY_EXCLUDE_MATH_H
 #include <math.h>
