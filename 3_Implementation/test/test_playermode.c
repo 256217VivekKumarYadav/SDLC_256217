@@ -17,14 +17,13 @@ void setUp(){}
 void tearDown(){}
 
 /* Prototypes for all the test functions */
-void test_main(void);
 int test_chooseplayermode(t_struct *s, int key);
 
 
 /* Write all the test functions */ 
 int test_chooseplayermode(t_struct *s, int key) {
   
-  TEST_ASSERT_EQUAL(0, player_mode_opt(0, KEY_UP));
+  TEST_ASSERT_EQUAL_INT(0, test_chooseplayermode(0, KEY_UP));
 }
 
 /* Start of the application test */
