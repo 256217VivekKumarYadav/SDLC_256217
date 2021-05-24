@@ -23,7 +23,7 @@ int test_start_curse();
 /* Write all the test functions */ 
 int test_start_curse() {
   
-  TEST_ASSERT_EQUAL_INT(0, start_curse());
+  TEST_ASSERT_EQUAL_INT(0, test_start_curse());
 }
 
 /* Start of the application test */
