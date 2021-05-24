@@ -26,7 +26,7 @@ void test_my_function(void);
 /* Write all the test functions */ 
 void test_my_function(void) {
   
-  TEST_ASSERT_EQUAL(0,str_put(char str[0], int output=2));
+  TEST_ASSERT_EQUAL_INT(0,str_put(char str[0], int output=2));
 }
 
 /* Start of the application test */
