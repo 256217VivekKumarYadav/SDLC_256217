@@ -17,7 +17,7 @@ void setUp(){}
 void tearDown(){}
 
 /* Write all the test functions */ 
-int test_start_curse(void) {
+void test_start_curse(void) {
   
   TEST_ASSERT_EQUAL(0, test_start_curse());
 }
