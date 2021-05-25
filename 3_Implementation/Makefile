@@ -81,7 +81,7 @@ fclean: clean
 re: fclean all
 
 coverage:
-	cp test/test_playermode.c
+	#cp test/test_playermode.c
 	gcc -fprofile-arcs -ftest-coverage -I $(INC_H) -I $(INC_T) test/test_playermode.c $(SRC) -o $(call FixPath, $(PROJ_NAME).$(EXEC))
 	$(call FixPath, ./$(PROJ_NAME).$(EXEC))
 	gcov -a $(COV_SRC)
