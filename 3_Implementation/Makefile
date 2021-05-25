@@ -85,7 +85,7 @@ clean:
 	$(RM) *.c.gcov	
 
 test:
-	gcc -I $(INC_H) -I $(INC_T) $(TEST_SRC) $(SRC) $(LDFLAGS) -o $(call FixPath,$(TEST_PROJ_NAME).$(EXEC))
+	gcc -I $(INC_H) -I $(INC_T) $(TEST_SRC) $(SRC) $(LDFLAGS) test/test_matrix_line_opt.c -o $(call FixPath,$(TEST_PROJ_NAME).$(EXEC))
 	./$(call FixPath,$(TEST_PROJ_NAME).$(EXEC))
 
 fclean: clean
@@ -95,7 +95,7 @@ re: fclean all
 
 coverage:
 	cp test/test_end.c
-	gcc -fprofile-arcs -ftest-coverage -I $(INC_H) -I $(INC_T) $(LDFLAGS) unity/unity.c test/test_end.c  $(SRC) -o $(call FixPath, $(TEST_PROJ_NAME).$(EXEC))
+	gcc -fprofile-arcs -ftest-coverage -I $(INC_H) -I $(INC_T) $(LDFLAGS) unity/unity.c test/test_matrix_line_opt.c  $(SRC) -o $(call FixPath, $(TEST_PROJ_NAME).$(EXEC))
 	$(call FixPath, ./$(TEST_PROJ_NAME).$(EXEC))
 	gcov -a $(COV_SRC)
 	$(RM) *.$(EXEC)
