@@ -21,7 +21,7 @@ int test_start_curse();
 /* Write all the test functions */ 
 int test_start_curse() {
   
-  TEST_ASSERT_EQUAL(0, test_start_curse());
+  TEST_ASSERT_EQUAL(0, start_curse());
 }
 
 /* Start of the application test */
@@ -31,16 +31,9 @@ int main()
   UNITY_BEGIN();
 
 /* Run Test functions */
-  //RUN_TEST(test_mainmenu);
+  
   RUN_TEST(test_start_curse);
-  //RUN_TEST(test_Washclothes);
-  //RUN_TEST(test_WashMenu);
-  //RUN_TEST(test_Soak);
-  //RUN_TEST(test_getTimesoak);
-  //RUN_TEST(test_Temperature);
-  //RUN_TEST(test_viewlog);
-  //RUN_TEST(test_processlog);
-
+  
   /* Close the Unity Test Framework */
   return UNITY_END();
 }
