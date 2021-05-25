@@ -21,7 +21,7 @@ int test_start_curse();
 /* Write all the test functions */ 
 int test_start_curse() {
   
-  TEST_ASSERT_EQUAL(0, start_curse());
+  TEST_ASSERT_EQUAL(0, main());
 }
 
 /* Start of the application test */
