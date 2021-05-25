@@ -35,11 +35,10 @@ CC = gcc
 
 OBJS=	$(SRC:.c=.o)
 
-COV_SRC =test/test_matrix_line_opt.c \
+COV_SRC =unity/unity.c 
 
 
-TEST_SRC =test/test_matrix_line_opt.c \
-unity/unity.c 
+TEST_SRC =unity/unity.c 
 INC_H = inc
 INC_T = unity
 
@@ -74,7 +73,7 @@ clean:
 	$(RM) *.c.gcov	
 
 test:
-	gcc -I $(INC_H) -I $(INC_T) $(TEST_SRC) $(SRC) $(LDFLAGS) test/test_matrix_line_opt.c -o $(call FixPath,$(TEST_PROJ_NAME).$(EXEC))
+	gcc -I $(INC_H) -I $(INC_T) $(TEST_SRC) $(SRC) $(LDFLAGS) unity/unity.c -o $(call FixPath,$(TEST_PROJ_NAME).$(EXEC))
 	./$(call FixPath,$(TEST_PROJ_NAME).$(EXEC))
 
 fclean: clean
