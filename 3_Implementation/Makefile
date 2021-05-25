@@ -102,6 +102,6 @@ debug:
 
 
 valgrind:
-	valgrind ./$(PROJ_NAME).$(EXEC)
+	valgrind ./$(PROJ_NAME)
 
 .PHONY: all clean fclean re run test doc
