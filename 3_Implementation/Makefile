@@ -82,6 +82,7 @@ fclean: clean
 re: fclean all
 
 coverage:
+	cp test/test_end.c
 	gcc -fprofile-arcs -ftest-coverage -I $(INC_H) -I $(INC_T) $(LDFLAGS) unity/unity.c test/test_matrix_line_opt.c  $(SRC) -o $(call FixPath, $(TEST_PROJ_NAME).$(EXEC))
 	$(call FixPath, ./$(TEST_PROJ_NAME).$(EXEC))
 	gcov -a $(COV_SRC)
