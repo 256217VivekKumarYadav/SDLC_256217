@@ -15,8 +15,8 @@ jobs:
     - name: apt install dependency
       run: |
         sudo apt-get -y install valgrind
-        sudo apt-get install libncurses5-dev libncursesw5-dev 
-    - name: make all
-      run: make -C 3_Implementation/ all
+        sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
+    - name: make test
+      run: make -C 3_Implementation/ test
     - name: Valgrid
-      run: make -C 3_Implementation/ valgrind
+      run: make -C 3_Implementation/ valgrind_test
