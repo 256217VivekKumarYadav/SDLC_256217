@@ -9,13 +9,14 @@
  * 
  */
 #include "matrix.h"
-#include "unity_internals.h"
 #include "unity.h"
 
 /* Required by the unity test framework */
 void setUp(){}
 /* Required by the unity test framework */
 void tearDown(){}
+
+int test_start_curse();
 
 /* Write all the test functions */ 
 int test_start_curse() {
