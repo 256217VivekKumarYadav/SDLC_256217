@@ -45,7 +45,7 @@ TEST_SRC = test/test_playermode.c \
 test/test_matrix_line_opt.c \
 test/test_gamelevel.c \
 test/test_gamesize.c \
-test/test_my.c
+test/test_my.c \
 unity/unity.c 
 INC_H = inc
 INC_T = unity
